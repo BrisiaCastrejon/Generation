@@ -11,7 +11,7 @@ const Marker = () => (
 
 const UserMarker = () => (
   <div style={{color:"blue"}}> 
-      <i className="fas fa-suitcase"></i>
+      <i className="fas fa-map-pin"></i>
   </div>);
 
 // const FilterMarkers = () => (
