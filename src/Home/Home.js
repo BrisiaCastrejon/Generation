@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Map from './Map';
-// import Search from './Search';
+import Search from './Search';
 
 class Home extends Component{
     constructor(props){
@@ -51,6 +51,7 @@ class Home extends Component{
             <div>
             <Navbar />
             <Map coords={this.state.coords}/>
+            <Search />
            
             </div>
         );
