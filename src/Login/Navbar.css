@@ -9,3 +9,7 @@
 .logo{
     height: 2em;
 }
+
+.fixed-top{
+    position: unset;
+}

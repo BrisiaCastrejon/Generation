@@ -1,35 +1,57 @@
 import React, { Component } from 'react';
-import ButtonLogout from './ButtonLogout';
-
-// components
-import Search from './Search';
+import Navbar from './Navbar';
+import Map from './Map';
+// import Search from './Search';
 
 class Home extends Component{
     constructor(props){
         super(props)
 
         this.handleCurrentPosition = this.handleCurrentPosition.bind(this);
+        this.handleShowPosition = this.handleShowPosition.bind(this);
 
         this.state = {
-            latitude:19.43,
-            longitude:-99.13
+            coords: {
+                lat:19.43,
+                lng:-99.13
+            }
         }
     }
 
-    handleCurrentPosition(coords){
+    handleCurrentPosition(){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.handleShowPosition);
+        } else {
+            console.log('navegador no soportado');
+        }  
+    }
+
+    handleShowPosition(position){
+        const newLatitude = position.coords.latitude;
+        const newLongitude = position.coords.longitude;
         this.setState({
-            latitude:coords.latitude,
-            longitude:coords.longitude
-        })       
+            coords:{
+                lat:newLatitude,
+                lng:newLongitude
+            }})
+    }
+
+    componentDidMount(){
+        this.handleCurrentPosition();
     }
 
     render(){
         console.log(this.state);
         
         return(
+            // <div>
+            // <Search latitude={this.state.latitude} longitude={this.state.longitude} handleCurrentPosition={this.handleCurrentPosition}/>
+            // <ButtonLogout />
+            // </div>
             <div>
-            <Search latitude={this.state.latitude} longitude={this.state.longitude} handleCurrentPosition={this.handleCurrentPosition}/>
-            <ButtonLogout />
+            <Navbar />
+            <Map coords={this.state.coords}/>
+           
             </div>
         );
     }
