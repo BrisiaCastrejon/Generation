@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-//import {Form, Row, Group, FormLabel, Button} from 'react-bootstrap';
 import Autocomplete from  'react-autocomplete';
-
 import {getStocks, matchStocks} from '../Data/data'
 
 //import {geolocated} from 'react-geolocated';
@@ -39,7 +37,7 @@ class Filter extends Component {
         />
 
             <section>
-                <button type="button" class="btn btn-outline-primary">Buscar</button>
+                <button type="button" className="btn btn-outline-primary">Buscar</button>
 
             </section>
          </div>      
