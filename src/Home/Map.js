@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import GoogleMapReact from 'google-map-react';
 import Data from '../Data/store_directory';
 
-const Marker = ({ text }) => (<div>{text}</div>);
+const Marker = () => (
+    <div style={{color:"#d60093"}}> 
+        <i class="fas fa-suitcase"></i>
+    </div>);
 
 const getMarkers = () => {
     const markerArray = Data.map((element) => {
@@ -17,7 +20,7 @@ class Map extends Component {
         lat: 19.43,
         lng: -99.13
     },
-    zoom: 11
+    zoom: 13
     
   };
 
@@ -30,14 +33,6 @@ class Map extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom} 
           >
-          
-          <Marker
-          lat={19.5418}
-          lng={-99.23292} 
-          text={"Red Barn Stores"}
-          body={{color:"blue"}}
-          
-          />
 
           {getMarkers()}
 
