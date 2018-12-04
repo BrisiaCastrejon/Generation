@@ -15,9 +15,9 @@ class Search extends React.Component {
       //this.props.handleCurrentPosition(this.props.coords);      
     }
   }
+
   componentDidMount(){
-    //console.log(this.props);
-    
+    //console.log(this.props); 
   }
 
   render() {  

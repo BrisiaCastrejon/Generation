@@ -10,7 +10,6 @@ class SectionForm extends Component{
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePass = this.handleChangePass.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
-
         this.state = {
             email: '',
             pass: '',
@@ -21,15 +20,18 @@ class SectionForm extends Component{
         this.setState({email: event.target.value});
     }
 
+
     handleChangePass(event) {
         this.setState({pass: event.target.value});
     }
 
-    handleLogin(){
+
+    handleLogin(e){
         // .then(()=>{
         //     this.props.history.replace('/home');    
         // })
         // esta wea no jala, no se qué le moví :'(
+        e.preventDefault();
         ConfigFire.auth().signInWithEmailAndPassword(this.state.email, this.state.pass)
         .then(
             this.props.history.push("/home")
@@ -42,6 +44,9 @@ class SectionForm extends Component{
             console.log(errorMessage);
         });
     }
+
+
+
 
     render(){
         return(

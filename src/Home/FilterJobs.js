@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-//import {Form, Row, Group, FormLabel, Button} from 'react-bootstrap';
 import Autocomplete from  'react-autocomplete';
-
 import {getStocks, matchStocks} from '../Data/data'
 
 //import {geolocated} from 'react-geolocated';
