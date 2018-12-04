@@ -9,6 +9,7 @@ class Home extends Component{
 
         this.handleCurrentPosition = this.handleCurrentPosition.bind(this);
         this.handleShowPosition = this.handleShowPosition.bind(this);
+        this.handleChangePosition = this.handleChangePosition.bind(this);
 
         this.state = {
             coords: {
@@ -36,6 +37,16 @@ class Home extends Component{
             }})
     }
 
+    handleChangePosition(lat,lng){
+        const newLatitude = lat;
+        const newLongitude = lng;
+        this.setState({
+            coords:{
+                lat:newLatitude,
+                lng:newLongitude
+        }})
+    }
+
     componentDidMount(){
         this.handleCurrentPosition();
     }
@@ -50,7 +61,8 @@ class Home extends Component{
             // </div>
             <div>
             <Navbar />
-            <Map coords={this.state.coords}/>
+            <Map coords={this.state.coords} 
+            changePosition = {this.handleChangePosition}/>
             <Search />
            
             </div>
