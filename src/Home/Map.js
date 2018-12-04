@@ -49,30 +49,27 @@ const getMarkers = (props) => {
 }
 class Map extends Component {
   static defaultProps = {
-    center: {
-        lat: 19.43,
-        lng: -99.13
-    },
     zoom: 13
     
   };
 
   render() {
-    console.log('estos son los props de map', this.props)
-    getFilter(this.props.coords.lat, this.props.coords.lng, 10, 10);
     return (
-      // Important! Always set the container height explicitly
+      <section>      
       <div style={{ height: '100vh', width: '100%' }}>
+      <article>
       <Autocomplete
-        style={{width: '90%'}}
+        style={{width: '100%'}}
         onPlaceSelected={(place) => {
-          console.log(place);
-        }}
+          this.props.changePosition((place.geometry.location.lat()),(place.geometry.location.lng()))
+         }}
         types={['(regions)']}
         componentRestrictions={{country: "mx"}}/>
+        </article>
         <GoogleMapReact
           bootstrapURLKeys={{ key:'AIzaSyBYKb22rHjTAooeyz_Mrfg0ku35OhDMFyw' }}
-          defaultCenter={this.props.center}
+          defaultCenter={this.props.coords}
+          center={this.props.coords}
           defaultZoom={this.props.zoom} 
           >
 
@@ -80,6 +77,7 @@ class Map extends Component {
           
         </GoogleMapReact>
       </div>
+      </section>
 
     );
   }
