@@ -9,7 +9,7 @@ class Login extends Component{
         return(
             <section>
                 <section><Navbar /></section>
-                <section className="row"><SectionForm /></section>              
+                <section><SectionForm /></section>              
             </section>
         );
     }

@@ -9,7 +9,7 @@ const Marker = () => (
 
 const getMarkers = () => {
     const markerArray = Data.map((element) => {
-        return (<Marker lat={element.Coordinates.lat} lng={element.Coordinates.lng} text={element.Name} />)
+        return (<Marker lat={element.Coordinates.lat} lng={element.Coordinates.lng} text={element.Name} key={element.i}/>)
     })
     return markerArray;
 }

@@ -47,7 +47,7 @@ class SectionForm extends Component{
         return(
             <section className="back-img">
                 <form className="col-lg-4 col-md-6 col-sm-8 col-xs-4 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-4 form-login">   
-                    <div className="form-group">
+                    <div className="form-group pt-5">
                         <label for="exampleInputEmail1">Correo</label>
                         <input type="email" className="form-control inputs" id="exampleInputEmail1" aria-describedby="emailHelp"
                         placeholder="Ingresa tu correo" value={this.state.email} onChange={this.handleChangeEmail} required/> 

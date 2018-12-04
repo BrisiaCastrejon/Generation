@@ -1,0 +1,8 @@
+.boton{
+    font-size: 10px;
+    background-color: #00b3a1;
+    text-align: center;
+}
+.boton:hover{
+    background-color: #00B0CF;
+}

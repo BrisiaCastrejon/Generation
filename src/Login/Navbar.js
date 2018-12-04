@@ -5,7 +5,7 @@ class Navbar extends Component{
 
     render(){
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
                 <img alt="logotipo de generation" className="logo" src="https://www.generation.org/wp-content/themes/generation/images/logos/generation-logo.svg"/>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

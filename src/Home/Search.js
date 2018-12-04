@@ -12,7 +12,7 @@ class Search extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (!prevProps.coords && this.props.coords) {
-      this.props.handleCurrentPosition(this.props.coords);
+      this.props.handleCurrentPosition(this.props.coords);      
     }
   }
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {ConfigFire} from '../Firebase/Firebase';
 import { withRouter } from 'react-router-dom';
+// styles
+import './ButtonLogout.css'
 
 class ButtonLogout extends Component{
     constructor(props){
@@ -25,7 +27,9 @@ class ButtonLogout extends Component{
     }
     render(){
         return(
-            <button type="button" className="btn btn-secondary ml-auto" onClick={this.handleLogout}>Cerrar sesión</button>
+            <div className="boton px-2 py-1">
+            <a  onClick={this.handleLogout}>Cerrar sesión</a>
+            </div>
         );
     }
 }
